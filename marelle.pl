@@ -14,11 +14,15 @@
 %  met(python, _) :- which(python, _).
 %  meet(python, osx) :- sh('brew install python').
 %
+% Informs the system that the specified predicate(s)
+% may be defined over more than one file.
 :- multifile pkg/1.
 :- multifile meet/2.
 :- multifile met/2.
 :- multifile depends/3.
 
+% definition may change during execution
+% definition is changed using assertz/1 and retract/1
 :- dynamic platform/1.
 
 marelle_version('dev').
@@ -43,12 +47,14 @@ marelle_search_path('deps').
 %
 
 main :-
-    ( current_prolog_flag(os_argv, Argv) ->
+    (% not sure what this mean, possibly setting the Argv val
+        current_prolog_flag(os_argv, Argv) ->
         true
     ;
-        current_prolog_flag(argv, Argv)
+    current_prolog_flag(argv, Argv)
     ),
-    append([_, _, _, _, _, _], Rest, Argv),
+    %
+    append([_, _, _, _, _], Rest, Argv),
     detect_platform,
     load_deps,
     ( Rest = [Command|SubArgs] ->
@@ -284,6 +290,8 @@ detect_platform :-
     ;
         Platform = unknown
     ),
+
+    writeln(Platform),
     retractall(platform(_)),
     assertz(platform(Platform)).
 
@@ -296,6 +304,7 @@ join(L, R) :- atomic_list_concat(L, R).
 linux_name(Name) :-
     which('lsb_release', _),
     sh_output('lsb_release -c | sed \'s/^[^:]*:\\s//g\'', Name),
+    % dif is a constraint that is true if A and B are different
     dif(Name,'n/a'), !.
 linux_name(Name) :-
     which('lsb_release', _),

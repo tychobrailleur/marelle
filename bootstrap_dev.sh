@@ -112,10 +112,12 @@ function check_in_path() {
 function checkout_marelle() {
   echo 'Trying to check out marelle'
   mkdir -p ~/.local/bin
-  git clone https://github.com/larsyencken/marelle ~/.local/marelle
+  git clone https://github.com/tychobrailleur/marelle ~/.local/marelle
+  # FIXME The double quotes around arguments become a single entry in Argv,
+  # need to find a way to fix that
   cat >~/.local/bin/marelle <<EOF
 #!/bin/sh
-exec swipl -q -t main -s ~/.local/marelle/marelle.pl "\$@"
+exec swipl -q -t main ~/.local/marelle/marelle.pl \$@
 EOF
   chmod a+x ~/.local/bin/marelle
   if [ ! -d ~/.local/marelle -o ! -x ~/.local/bin/marelle ]; then

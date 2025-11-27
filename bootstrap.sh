@@ -119,7 +119,7 @@ function checkout_marelle() {
   sudo git clone -b versions/0.1.0 https://github.com/larsyencken/marelle
   sudo sh -c "cat > ${DEST_BIN}" <<EOF
 #!/bin/sh
-exec swipl -q -t main -s "${DEST_DIR}/marelle.pl" "\$@"
+exec swipl -q -t main "${DEST_DIR}/marelle.pl" \$@
 EOF
   sudo chmod a+x "${DEST_BIN}"
   if [ ! -d "${DEST_DIR}" -o ! -x "${DEST_BIN}" ]; then
