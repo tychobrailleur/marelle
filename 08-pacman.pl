@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  08-pacman.pl
 %  marelle-deps

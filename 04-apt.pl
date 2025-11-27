@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  04-apt.pl
 %  marelle-deps

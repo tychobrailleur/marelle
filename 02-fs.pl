@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  02-fs.pl
 %  marelle-deps

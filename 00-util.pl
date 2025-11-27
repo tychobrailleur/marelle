@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  util.pl
 %  marelle-deps

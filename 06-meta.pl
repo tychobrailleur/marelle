@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  06-meta.pl
 %  marelle-deps

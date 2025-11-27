@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  01-python-helpers.pl
 %  marelle-deps

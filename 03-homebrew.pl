@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  03-homebrew.pl
 %  marelle-deps

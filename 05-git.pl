@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  05-git.pl
 %  marelle-deps

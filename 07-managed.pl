@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  07-managed.pl
 %  marelle

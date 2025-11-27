@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  09-freebsd.pl
 %  marelle

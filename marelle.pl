@@ -1,3 +1,4 @@
+% -*- mode: prolog -*-
 %
 %  marelle
 %
